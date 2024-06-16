@@ -1,4 +1,4 @@
-package np.com.roshanadhikary.mdblog;
+package com.swj.mdblog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

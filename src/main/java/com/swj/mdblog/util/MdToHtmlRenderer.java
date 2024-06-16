@@ -1,4 +1,4 @@
-package np.com.roshanadhikary.mdblog.util;
+package com.swj.mdblog.util;
 
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;

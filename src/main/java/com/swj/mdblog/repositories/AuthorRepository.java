@@ -1,6 +1,6 @@
-package np.com.roshanadhikary.mdblog.repositories;
+package com.swj.mdblog.repositories;
 
-import np.com.roshanadhikary.mdblog.entities.Author;
+import com.swj.mdblog.entities.Author;
 import org.springframework.data.repository.CrudRepository;
 
 public interface AuthorRepository extends CrudRepository<Author, Long> {

@@ -1,7 +1,7 @@
-package np.com.roshanadhikary.mdblog.controllers;
+package com.swj.mdblog.controllers;
 
-import np.com.roshanadhikary.mdblog.entities.Post;
-import np.com.roshanadhikary.mdblog.repositories.PostRepository;
+import com.swj.mdblog.entities.Post;
+import com.swj.mdblog.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -1,7 +1,7 @@
-package np.com.roshanadhikary.mdblog.entities;
+package com.swj.mdblog.entities;
 
+import com.swj.mdblog.util.LocalDateTimeConverter;
 import lombok.Data;
-import np.com.roshanadhikary.mdblog.util.LocalDateTimeConverter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

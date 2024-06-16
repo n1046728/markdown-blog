@@ -1,11 +1,11 @@
-package np.com.roshanadhikary.mdblog.util;
+package com.swj.mdblog.util;
 
 import org.jsoup.Jsoup;
 
 import java.util.List;
 import java.util.Optional;
 
-import static np.com.roshanadhikary.mdblog.util.MdToHtmlRenderer.renderHtml;
+import static com.swj.mdblog.util.MdToHtmlRenderer.renderHtml;
 
 public class PostUtil {
 	public static String getHtmlContentFromMdLines(List<String> mdLines) {

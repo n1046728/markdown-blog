@@ -1,4 +1,4 @@
-package np.com.roshanadhikary.mdblog.entities;
+package com.swj.mdblog.entities;
 
 import lombok.Data;
 import javax.persistence.*;

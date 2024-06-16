@@ -1,9 +1,12 @@
-package np.com.roshanadhikary.mdblog.listeners;
+package com.swj.mdblog.listeners;
 
-import np.com.roshanadhikary.mdblog.entities.Author;
-import np.com.roshanadhikary.mdblog.entities.Post;
-import np.com.roshanadhikary.mdblog.repositories.AuthorRepository;
-import np.com.roshanadhikary.mdblog.repositories.PostRepository;
+import com.swj.mdblog.entities.Author;
+import com.swj.mdblog.entities.Post;
+import com.swj.mdblog.repositories.AuthorRepository;
+import com.swj.mdblog.util.AuthorUtil;
+import com.swj.mdblog.util.MdFileReader;
+import com.swj.mdblog.util.PostUtil;
+import com.swj.mdblog.repositories.PostRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,10 +19,6 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-
-import static np.com.roshanadhikary.mdblog.util.MdFileReader.*;
-import static np.com.roshanadhikary.mdblog.util.PostUtil.*;
-import static np.com.roshanadhikary.mdblog.util.AuthorUtil.*;
 
 @Component
 public class ContextEventListener implements ApplicationListener<ContextRefreshedEvent> {
@@ -40,13 +39,13 @@ public class ContextEventListener implements ApplicationListener<ContextRefreshe
 
 			if (postFileNameOpt.isPresent()) {
 				String postFileName = postFileNameOpt.get();
-				String title = getTitleFromFileName(postFileName);
-				long id = getIdFromFileName(postFileName);
+				String title = MdFileReader.getTitleFromFileName(postFileName);
+				long id = MdFileReader.getIdFromFileName(postFileName);
 
-				List<String> mdLines = readLinesFromMdFile(postFileName);
-				String htmlContent = getHtmlContentFromMdLines(mdLines);
+				List<String> mdLines = MdFileReader.readLinesFromMdFile(postFileName);
+				String htmlContent = PostUtil.getHtmlContentFromMdLines(mdLines);
 
-				Author author = bootstrapAuthor(authorRepository);
+				Author author = AuthorUtil.bootstrapAuthor(authorRepository);
 
 				Optional<Post> postOpt = postRepository.findById(id);
 				if (postOpt.isEmpty()) {
@@ -54,7 +53,7 @@ public class ContextEventListener implements ApplicationListener<ContextRefreshe
 					post.setTitle(title);
 					post.setAuthor(author);
 					post.setContent(htmlContent);
-					post.setSynopsis(getSynopsisFromHtmlContent(htmlContent));
+					post.setSynopsis(PostUtil.getSynopsisFromHtmlContent(htmlContent));
 					post.setDateTime(LocalDateTime.now());
 
 					postRepository.save(post);

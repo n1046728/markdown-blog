@@ -1,7 +1,7 @@
-package np.com.roshanadhikary.mdblog.util;
+package com.swj.mdblog.util;
 
-import np.com.roshanadhikary.mdblog.entities.Author;
-import np.com.roshanadhikary.mdblog.repositories.AuthorRepository;
+import com.swj.mdblog.entities.Author;
+import com.swj.mdblog.repositories.AuthorRepository;
 
 import java.util.Optional;
 

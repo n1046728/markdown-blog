@@ -1,4 +1,4 @@
-package np.com.roshanadhikary.mdblog.util;
+package com.swj.mdblog.util;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
